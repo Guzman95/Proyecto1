@@ -1,0 +1,36 @@
+CONSIDERACIONES IMPORTANTES A TENER EN CUENTA:
+Para hacer uso de los diferentes servicios de Google como el de autenticación y el de mapas, es necesario configurar el proyecto en la plataforma de google (Google API Console).
+Para nuestro proyecto, el paquete con el que se registro es: com.example.bicisafe
+Tener ésto siempre en cuenta cada que se quiera hacer uso de un servicio de google.
+
+MAPAS:
+Para el caso particular de los mapas, además del nombre del paquete de nuestra aplicación, también se debe generar y obtener el SHA1 del proyecto. Esto se logra simplemente yendo a la parte derecha de la pantalla de Android Studio donde se ve una pestaña llamada Gradle. Al abrirla, buscar en los subdirectorios la ruta 
+:app/Task/Android y hacer clic en el archivo que dice "signingReport" y automaticamente se mostrarán los codigos generados.
+Una vez ingresado el paquete de la aplicación y el SHA1, google nos proporciona la clave de uso de mapas concedida a nuestra aplicación, la cual es:
+
+AIzaSyC85oqp6KaMRrq7Ty9EuLfo73oPc3ZNViY
+
+Es muy importante tener en cuenta esta clave, que se debió poner en el archivo google_maps_api.xml de la carpeta "values" del proyecto.
+
+NOTA IMPORTANTE: El proyecto que creé para la Google API Console se llama BiciSafe y el paquete es com.example.bicisafe
+Si quieren implementar nuevamente esas funcionalidades por favor NO PROPORCIONAR esos mismos nombres o valores, pues de lo contrario en la aplicación dejará de funcionar esos servicios.
+
+AndroidManifest.xml:
+En la carpeta manifest del proyecto se encuentra el archivo AndroidManifest.xml, en el cual se establecen los permisos de los tipos de servicios que usará la aplicación. También se declaran las activitys que hacen parte del proyecto y con cuál inicia la aplicación.
+
+Dependencias:
+En la sección Gradle Scripts se encontrará un archivo llamado "build.gradle(Module:app). En él hay una sección denominada "dependencies". Ahí especifican las librerias o herramientas de las que la aplicación hará uso. Cada vez que agreguemos una nueva, en la parte de superior de esa pantalla aparecerá un letrero llamado "Sync" que al hacer clic empezará a descargar todas las dependencias que le hemos especificado.
+
+Archivos Layout:
+En la carpeta "res" del proyecto, se podrá encontrar un subdirectorio llamado "layout". En él se encuentrar todos los archivos .xml que representan las interfaces graficas de las Activitys que declaramos en nuestro proyecto. Algunas de esas interfaces están compuestas por otras subinterfaces dispuestas en ese mismo directorio.
+
+Uso de imagenes o íconos:
+Para hacer uso de alguna imagen o icono externo, se debe pegar el archivo de imagen dentro de la carpeta "mipmap" que se encuentra dentro también de la carpeta "res" del proyecto. Una vez puestas ahí podrán ser usadas en las interfaces gráficas.
+
+
+
+Adjunto los links de la documentación oficial de google para algunos de los servicios:
+
+Autenticación de Google: https://developers.google.com/identity/sign-in/android/start-integrating
+
+Google Maps: https://developers.google.com/maps/documentation/android-sdk/start
